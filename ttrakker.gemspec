@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Ttrakker::VERSION
   spec.authors       = ["Benjamin Pearce"]
   spec.email         = ["hawk.git@bcpearce.com\n"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
+  spec.summary       = "Provides interface for scraping data from Amtrak.com"
   spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  spec.add_runtime_dependency "mechanize"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
