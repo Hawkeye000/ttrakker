@@ -10,6 +10,7 @@ module Ttrakker
   STATUS_NEEDS = [[:origin, :destination], [:train, :origin], [:train, :destination]]
   STATUS_RESULT = ".status_result"
   ROUTE_NUM = ".route_num"
+  ROUTE_NAME = ".route_name"
 
   def get_root
     agent = Mechanize.new
@@ -39,6 +40,10 @@ module Ttrakker
 
   def route_num(status_result)
     status_result.first.search(ROUTE_NUM).text.delete("\r\n")
+  end
+
+  def route_name(status_result)
+    status_result.first.search(ROUTE_NAME).text.delete("\r\n")
   end
 
   class StatusResult < Array

@@ -43,9 +43,11 @@ describe Ttrakker do
 
   describe "status_results" do
 
-    before do
-      @options = {origin:"NLC", destination:"NYP"}
-      @results = status_results(@options)
+    before do |example|
+      unless example.metadata[:skip_before]
+        @options = {origin:"NLC", destination:"NYP"}
+        @results = status_results(@options)
+      end
     end
 
     it "should group results into pairs" do
@@ -59,7 +61,17 @@ describe Ttrakker do
     describe "route_num" do
 
       it "should return a number" do
-        expect(@results.each { |x| route_num(x) =~ /\A\d*\z/ }).to be_truthy
+        expect(@results.all? { |x| route_num(x) =~ /\A\d*\z/ }).to be_truthy
+      end
+
+    end
+
+    describe "route_name" do
+
+      it "should return a string", :skip_before do
+        @options = {origin:"NYP", train:"2100"}
+        @results = status_results(@options)
+        expect(@results.all? { |x| route_name(x).to_s }).to be_truthy
       end
 
     end
