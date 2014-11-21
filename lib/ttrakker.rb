@@ -8,6 +8,7 @@ module Ttrakker
                    origin:'wdf_origin', destination:'wdf_destination',
                    sort_by:'wdf_SortBy' }
   STATUS_NEEDS = [[:origin, :destination], [:train, :origin], [:train, :destination]]
+  STATUS_RESULT = ".status_result"
 
   def get_root
     agent = Mechanize.new
@@ -29,5 +30,15 @@ module Ttrakker
 
     agent.submit(status_form)
   end
+
+  def status_results(options={})
+    page = status_query(options)
+    page.search(STATUS_RESULT).each_slice(2).to_a
+  end
+
+  class StatusResult < Array
+
+  end
+
 
 end

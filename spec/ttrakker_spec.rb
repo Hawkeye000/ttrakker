@@ -41,4 +41,21 @@ describe Ttrakker do
 
   end
 
+  describe "status_results" do
+
+    before do
+      @options = {origin:"NLC", destination:"NYP"}
+      @results = status_results(@options)
+    end
+
+    it "should group results into pairs" do
+      expect(@results.all? { |x| x.length == 2 }).to be_truthy
+    end
+
+    it "should have an arrival and departure in each pair" do
+      expect(@results.all? { |x| x[0].search(".departs") && x[1].search(".arrives") }).to be_truthy
+    end
+
+  end
+
 end
