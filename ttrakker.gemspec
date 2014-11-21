@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Benjamin Pearce"]
   spec.email         = ["hawk.git@bcpearce.com\n"]
   spec.summary       = "Provides interface for scraping data from Amtrak.com"
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.description   = ""
   spec.homepage      = ""
   spec.license       = "MIT"
 
