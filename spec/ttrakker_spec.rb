@@ -56,6 +56,14 @@ describe Ttrakker do
       expect(@results.all? { |x| x[0].search(".departs") && x[1].search(".arrives") }).to be_truthy
     end
 
+    describe "route_num" do
+
+      it "should return a number" do
+        expect(@results.each { |x| route_num(x) =~ /\A\d*\z/ }).to be_truthy
+      end
+
+    end
+
   end
 
 end

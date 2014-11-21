@@ -9,6 +9,7 @@ module Ttrakker
                    sort_by:'wdf_SortBy' }
   STATUS_NEEDS = [[:origin, :destination], [:train, :origin], [:train, :destination]]
   STATUS_RESULT = ".status_result"
+  ROUTE_NUM = ".route_num"
 
   def get_root
     agent = Mechanize.new
@@ -34,6 +35,10 @@ module Ttrakker
   def status_results(options={})
     page = status_query(options)
     page.search(STATUS_RESULT).each_slice(2).to_a
+  end
+
+  def route_num(status_result)
+    status_result.first.search(ROUTE_NUM).text.delete("\r\n")
   end
 
   class StatusResult < Array
