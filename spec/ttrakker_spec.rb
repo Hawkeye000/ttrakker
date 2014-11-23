@@ -76,6 +76,30 @@ describe Ttrakker do
 
     end
 
+    describe "origin" do
+
+      it "should return the city set as origin" do
+        expect(origin(@results.first) =~ /NLC/).to be_truthy
+      end
+
+      it "should not return the destination" do
+        expect(origin(@results.first) =~ /NYP/).to be_falsey
+      end
+
+    end
+
+    describe "destination" do
+
+      it "should return the city set as destination" do
+        expect(destination(@results.first) =~ /NYP/).to be_truthy
+      end
+
+      it "should not return the origin" do
+        expect(destination(@results.first) =~ /NLC/).to be_falsey
+      end
+
+    end
+
   end
 
 end

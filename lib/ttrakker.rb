@@ -1,4 +1,5 @@
 require "ttrakker/version"
+require "mechanize"
 
 module Ttrakker
 
@@ -11,11 +12,14 @@ module Ttrakker
   STATUS_RESULT = ".status_result"
   ROUTE_NUM = ".route_num"
   ROUTE_NAME = ".route_name"
+  CITY_CLASS = ".city"
+
 
   def get_root
     agent = Mechanize.new
     page = agent.get(ROOT)
   end
+  module_function :get_root
 
   def options_good?(options={})
     STATUS_NEEDS.any? { |keys| (keys - options.keys).empty? }
@@ -46,9 +50,12 @@ module Ttrakker
     status_result.first.search(ROUTE_NAME).text.delete("\r\n")
   end
 
-  class StatusResult < Array
-
+  def origin(status_result)
+    status_result.first.search(CITY_CLASS).text.delete("\r\n")
   end
 
+  def destination(status_result)
+    status_result.last.search(CITY_CLASS).text.delete("\r\n")
+  end
 
 end
