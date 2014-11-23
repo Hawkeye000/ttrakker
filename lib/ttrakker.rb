@@ -25,37 +25,44 @@ module Ttrakker
     STATUS_NEEDS.any? { |keys| (keys - options.keys).empty? }
   end
 
-  def status_query(options={})
-    agent = Mechanize.new
-    page = get_root
-    status_form = page.form(STATUS_FORM[:id])
+  module Status
 
-    options.each do |key, value|
-      status_form.send(STATUS_FORM[key], value)
+    def status_query(options={})
+      agent = Mechanize.new
+      page = get_root
+      status_form = page.form(STATUS_FORM[:id])
+
+      options.each do |key, value|
+        status_form.send(STATUS_FORM[key], value)
+      end
+
+      agent.submit(status_form)
     end
 
-    agent.submit(status_form)
-  end
+    def status_results(options={})
+      page = status_query(options)
+      page.search(STATUS_RESULT).each_slice(2).to_a
+    end
 
-  def status_results(options={})
-    page = status_query(options)
-    page.search(STATUS_RESULT).each_slice(2).to_a
-  end
+    def route_num(status_result)
+      status_result.first.search(ROUTE_NUM).text.delete("\r\n")
+    end
 
-  def route_num(status_result)
-    status_result.first.search(ROUTE_NUM).text.delete("\r\n")
-  end
+    def route_name(status_result)
+      status_result.first.search(ROUTE_NAME).text.delete("\r\n")
+    end
 
-  def route_name(status_result)
-    status_result.first.search(ROUTE_NAME).text.delete("\r\n")
-  end
+    def origin(status_result)
+      status_result.first.search(CITY_CLASS).text.delete("\r\n")
+    end
 
-  def origin(status_result)
-    status_result.first.search(CITY_CLASS).text.delete("\r\n")
-  end
+    def destination(status_result)
+      status_result.last.search(CITY_CLASS).text.delete("\r\n")
+    end
 
-  def destination(status_result)
-    status_result.last.search(CITY_CLASS).text.delete("\r\n")
   end
 
 end
+
+include Ttrakker
+include Ttrakker::Status
