@@ -1,6 +1,6 @@
 # Ttrakker
 
-This gem is uesed to pull data from ( amtrak.com ).  It currently supports status queries.
+This gem is uesed to pull data from ( http://amtrak.com ).  It currently supports status queries.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-User Ttrakker::Status.status_results to get an array of status results from ( amtrak.com ).
+User Ttrakker::Status.status_results to get an array of status results from ( http://amtrak.com ).
 Use the functions in the Ttrakker::Status library to grab specific data from each.
 
 ## Contributing
