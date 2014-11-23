@@ -16,13 +16,13 @@ module Ttrakker
   SCHEDULED = ".scheduled"
   DATE = ".date"
   TIME = ".time"
+  ACT_EST = ".act_est"
 
 
   def get_root
     agent = Mechanize.new
     page = agent.get(ROOT)
   end
-  module_function :get_root
 
   def options_good?(options={})
     STATUS_NEEDS.any? { |keys| (keys - options.keys).empty? }
@@ -63,17 +63,24 @@ module Ttrakker
       status_result.last.search(CITY_CLASS).text.delete("\r\n")
     end
 
-    def scheduled_dep(status_result)
-      time = status_result.first.search(SCHEDULED).search(TIME).text.delete("\r\n")
-      date = status_result.first.search(SCHEDULED).search(DATE).text.delete("\r\n")
+    def get_time_object(status_result, css_class, first_or_last = :first)
+      time = status_result.send(first_or_last).search(css_class).search(TIME).text.delete("\r\n")
+      date = status_result.send(first_or_last).search(css_class).search(DATE).text.delete("\r\n")
       DateTime.parse("#{date} #{time}")
     end
 
-    def scheduled_arr(status_result)
-      time = status_result.last.search(SCHEDULED).search(TIME).text.delete("\r\n")
-      date = status_result.last.search(SCHEDULED).search(DATE).text.delete("\r\n")
-      DateTime.parse("#{date} #{time}")
+    def scheduled_dep(status_result)
+      get_time_object(status_result, SCHEDULED, :first)
     end
+
+    def scheduled_arr(status_result)
+      get_time_object(status_result, SCHEDULED, :last)
+    end
+
+    #def act_est(status_result)
+
+
+
   end
 
 end
