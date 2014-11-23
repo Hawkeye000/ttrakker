@@ -13,6 +13,9 @@ module Ttrakker
   ROUTE_NUM = ".route_num"
   ROUTE_NAME = ".route_name"
   CITY_CLASS = ".city"
+  SCHEDULED = ".scheduled"
+  DATE = ".date"
+  TIME = ".time"
 
 
   def get_root
@@ -60,6 +63,17 @@ module Ttrakker
       status_result.last.search(CITY_CLASS).text.delete("\r\n")
     end
 
+    def scheduled_dep(status_result)
+      time = status_result.first.search(SCHEDULED).search(TIME).text.delete("\r\n")
+      date = status_result.first.search(SCHEDULED).search(DATE).text.delete("\r\n")
+      DateTime.parse("#{date} #{time}")
+    end
+
+    def scheduled_arr(status_result)
+      time = status_result.last.search(SCHEDULED).search(TIME).text.delete("\r\n")
+      date = status_result.last.search(SCHEDULED).search(DATE).text.delete("\r\n")
+      DateTime.parse("#{date} #{time}")
+    end
   end
 
 end

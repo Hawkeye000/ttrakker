@@ -100,6 +100,32 @@ describe Ttrakker do
 
     end
 
+    describe "scheduled_arr & scheduled_dep" do
+
+      describe "scheduled arr" do
+
+        it "should return a DateTime object" do
+          expect(scheduled_arr(@results.first)).to be_a(DateTime)
+        end
+
+      end
+
+      describe "scheduled_dep" do
+
+        it "should return a DateTime object" do
+          expect(scheduled_dep(@results.first)).to be_a(DateTime)
+        end
+
+      end
+
+      it "should have scheduled arrival after departure" do
+        dep = scheduled_dep(@results.first)
+        arr = scheduled_arr(@results.first)
+        expect(dep).to be < arr
+      end
+
+    end
+
   end
 
 end
