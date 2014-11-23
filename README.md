@@ -1,6 +1,6 @@
 # Ttrakker
 
-This gem is uesed to pull data from amtrak.com.  It currently supports status queries.
+This gem is uesed to pull data from ( amtrak.com ).  It currently supports status queries.
 
 ## Installation
 
@@ -18,12 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
-User Ttrakker::Status.status_results to get an array of status results from amtrak.com
+User Ttrakker::Status.status_results to get an array of status results from ( amtrak.com ).
 Use the functions in the Ttrakker::Status library to grab specific data from each.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/ttrakker/fork )
+1. Fork it ( https://github.com/Hawkeye000/ttrakker/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
