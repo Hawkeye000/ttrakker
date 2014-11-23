@@ -1,7 +1,6 @@
 require 'bundler/setup'
 Bundler.setup
 
-require 'mechanize'
 require 'ttrakker'
 
 RSpec.configure do |config|

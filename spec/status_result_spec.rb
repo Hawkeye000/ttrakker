@@ -2,7 +2,10 @@ require 'spec_helper'
 
 describe StatusResult do
 
-  before { @sr = StatusResult.new(status_results(origin:"NLC", destination:"NYP").first) }
+  before do
+    @sr_noko = status_results(origin:"NLC", destination:"NYP").first
+    @sr = StatusResult.new(@sr_noko)
+  end
 
   subject { @sr }
 
@@ -14,5 +17,13 @@ describe StatusResult do
   it { should respond_to :scheduled_arr }
   it { should respond_to :route_num }
   it { should respond_to :route_name }
+
+  describe "setting parameters" do
+
+    it "should have the same origin as the nokogiri result" do
+      expect(@sr.origin).to eq(origin(@sr_noko))
+    end
+
+  end
 
 end

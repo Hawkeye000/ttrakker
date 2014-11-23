@@ -1,5 +1,4 @@
 require "ttrakker/version"
-require "ttrakker/status_result"
 require "mechanize"
 
 module Ttrakker
@@ -92,3 +91,4 @@ end
 
 include Ttrakker
 include Ttrakker::Status
+require "ttrakker/status_result"
