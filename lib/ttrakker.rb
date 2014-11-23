@@ -77,9 +77,13 @@ module Ttrakker
       get_time_object(status_result, SCHEDULED, :last)
     end
 
-    #def act_est(status_result)
+    def act_est_dep(status_result)
+      get_time_object(status_result, ACT_EST, :first)
+    end
 
-
+    def act_est_arr(status_result)
+      get_time_object(status_result, ACT_EST, :last)
+    end
 
   end
 
