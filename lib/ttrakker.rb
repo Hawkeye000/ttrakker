@@ -1,4 +1,5 @@
 require "ttrakker/version"
+require "ttrakker/status_result"
 require "mechanize"
 
 module Ttrakker
