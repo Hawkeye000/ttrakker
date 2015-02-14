@@ -4,29 +4,41 @@ describe Ttrakker do
   describe "get_root" do
 
     it "should respond with 200" do
-      page = Ttrakker.get_root
-      expect(page.code).to eq("200")
+      VCR.use_cassette("get_root") do
+        page = Ttrakker.get_root
+        expect(page.code).to eq("200")
+      end
     end
 
   end
 
   describe "status_query" do
 
-    before do
-      @options = {origin:"NLC", destination:"NYP"}
+    context "parameters are good" do
+      before do
+        @options = {origin:"NLC", destination:"NYP"}
+        VCR.use_cassette("status_query") do
+          @response = status_query(@options)
+        end
+      end
+
+      it "should respond with 200" do
+        expect(@response.code).to eq("200")
+      end
+
+      it "should contain at least one status result" do
+        expect(@response.search(".status_result")).to_not be_empty
+      end
     end
 
-    it "should respond with 200" do
-      expect(status_query(@options).code).to eq("200")
-    end
-
-    it "should contain at least one status result" do
-      expect(status_query(@options).search(".status_result")).to_not be_empty
-    end
-
-    it "should not return status if the parameters are bad" do
-      @options[:origin] = nil
-      expect(status_query(@options).search(".status_result")).to be_empty
+    context "parameters are bad" do
+      it "should not return status" do
+        @options = {origin:nil, destination:"NYP"}
+        VCR.use_cassette("bad_status_query") do
+          @response = status_query(@options)
+        end
+        expect(@response.search(".status_result")).to be_empty
+      end
     end
 
   end
@@ -46,7 +58,9 @@ describe Ttrakker do
     before do |example|
       unless example.metadata[:skip_before]
         @options = {origin:"NLC", destination:"NYP"}
-        @results = status_results(@options)
+        VCR.use_cassette("status_results") do
+          @results = status_results(@options)
+        end
       end
     end
 
@@ -70,7 +84,9 @@ describe Ttrakker do
 
       it "should return a string", :skip_before do
         @options = {origin:"NYP", train:"2100"}
-        @results = status_results(@options)
+        VCR.use_cassette("status_result_route_name") do
+          @results = status_results(@options)
+        end
         expect(@results.all? { |x| route_name(x).to_s }).to be_truthy
       end
 
