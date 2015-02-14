@@ -8,6 +8,8 @@ module Ttrakker
   STATUS_FORM = {id:'ff_status_form', train:'wdf_trainNumber',
                    origin:'wdf_origin', destination:'wdf_destination',
                    sort_by:'wdf_SortBy' }
+  STATUS_FORM_2 = { id:"ff_status_form2", origin:"wdf_origin",
+                    destination:"wdf_destination", date:"wdfdate11" }
   STATUS_NEEDS = [[:origin, :destination], [:train, :origin], [:train, :destination]]
   STATUS_RESULT = ".status_result"
   ROUTE_NUM = ".route_num"
@@ -33,10 +35,10 @@ module Ttrakker
     def status_query(options={})
       agent = Mechanize.new
       page = get_root
-      status_form = page.form(STATUS_FORM[:id])
+      status_form = page.form(STATUS_FORM_2[:id])
 
       options.each do |key, value|
-        status_form.send(STATUS_FORM[key], value)
+        status_form.send(STATUS_FORM_2[key], value)
       end
 
       agent.submit(status_form)

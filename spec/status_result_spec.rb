@@ -5,8 +5,8 @@ describe StatusResult do
   before do
     VCR.use_cassette("status_result_for_poro") do
       @sr_noko = status_results(origin:"NLC", destination:"NYP").first
+      @sr = StatusResult.new(@sr_noko)
     end
-    @sr = StatusResult.new(@sr_noko)
   end
 
   subject { @sr }

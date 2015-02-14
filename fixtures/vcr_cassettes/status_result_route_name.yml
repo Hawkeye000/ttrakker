@@ -35,14 +35,14 @@ http_interactions:
       Location:
       - "/home"
       Date:
-      - Sat, 14 Feb 2015 22:18:23 GMT
+      - Sat, 14 Feb 2015 22:31:43 GMT
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Sat, 14 Feb 2015 22:18:19 GMT
+  recorded_at: Sat, 14 Feb 2015 22:31:39 GMT
 - request:
     method: get
     uri: http://www.amtrak.com/home
@@ -74,11 +74,13 @@ http_interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Set-Cookie:
-      - JSESSIONID=0000Ub1X4Bor7GmZg2zbhGzxZah:186s6mqln; HTTPOnly; Path=/; Domain=.amtrak.com;
+      - JSESSIONID=00003d7gPPjjLNAkiI7J1N86EQ9:186s78fdk; HTTPOnly; Path=/; Domain=.amtrak.com;
         HttpOnly
-      - TS3f5eae=680c3e715b9cdaa525beadabb5836f73f17e281ea48f1e6354dfc9af; Path=/
-      - TS81804f=24d8c443b2e9f93e0fa087a45feaaab4f17e281ea48f1e6354dfc9af60ac0ec570c595ff;
+      - TS3f5eae=11ef7f78c9789b7fd370cbcd23cbe613df4c6a5b31ffb13a54dfcccf5f2a2d3e54c462c2;
+        Path=/
+      - TS81804f=1a12f8e6bcc91d2aece94c44579b4eabdf4c6a5b31ffb13a54dfcccf60ac0ec52bad7340;
         path=/; domain=.amtrak.com
+      - _op_aixPageId=a2_d7bac3c9-24d8-4a82-ab87-0c06851c5e8b; Path=/
       Host-Service:
       - FutureTenseContentServer:7.6.0
       Vary:
@@ -90,7 +92,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Sat, 14 Feb 2015 22:18:24 GMT
+      - Sat, 14 Feb 2015 22:31:44 GMT
       Transfer-Encoding:
       - chunked
       Connection:
@@ -912,26 +914,26 @@ http_interactions:
         260mULzjsJzcPHrF/sv3OmUbjetj9lOf3zVGh9g7GEzQnHsB9DNAE1npA6ic
         zdu3pymbt1qQgge2eTNa5C/a0W0DZdMFCCDsNqlCdXFQz+o37NBq2YH11gQS
         pkgJz95evzk7vzitc3OftZql7qDt1pXLNcwahYdTOY/lQlk5bTD3/fSEokeg
-        4bZcqZWrW0a18qK2/aKyCaCZNbygbLYZcURCrjzIqmuv1tbmgDfqWWljUL+G
-        +ccGfEF/SihZnH1hdSaOVgrI5JkoftRtu6p4DFMOKEA+F67pZNBRPp/s6Pof
-        5Ok5P3Ib9ZkhIX9SPT8MhNw/d39ugIt8Ub9gX3A4jy8b7V43+Jc/ja6Ynu2W
-        sTE/oRgu+P37tOjHy2APYk4Jaj0G+dwb1fWwcHh1Xq9ndOkL3ggOPQ7xUmM0
-        wZTgM+U9OW5ABSX63CadjB/l6oDMl7gKJq78ekqLo81uiVMTeWhB8eeXr9i3
-        Xj2nbrAjJcYc3wwDqxRRn4OGbaRJaIW7VZtsfaxWre3h9Pff7d93f3dDZ7td
-        /fDcKbsfAnRW/xnAYF2sl10vHjdEwA9B/cp7Bs3A7nT7g3oVU8NP9b3SZqmC
-        z5Ae2ON6khU8RG6R47626Z+hSCXErRpvjF+iZvCtI+xR/NA8R9c2SqCU116A
-        dJrPy25itq6FaI0wbex7GL3ZWTd+NuJtx4Gv87ZR+UOQfRFtHqR8pLCB0U/U
-        khn3kpTQg/gTBRfN/n3zWDpJBsIsuopIRzaMbBlWR6vjfS4GNgabJuZKg5Gb
-        GYzc3zdPoSjBN3jJrqdWHQX2/OofGGwNnVPm7VT2pODTP/7Bk3hJZ+3fesCM
-        0INjgBJR8SHyJUoYjS3H7kWuhFYwNl3PSUwCQNAvGJTk0kINgPVwQfXJHTX2
-        Iol36B5amrSI63pq5HFDuBR8/DBxbF0kK0/sMjl3gNhXvjpvlk5HHauHTafu
-        orUnbHz9Mrm2prM6kpciBFSBMbM9b/QCjzJTxM6Y/xnqdl789gu293w0yEv4
-        UPXzRUNz5mn0GHsfpQ2m7E4y2hxo6K3oqUtW7JLZ8xKem2U8DdDm5/anGo3O
-        gp5roTjjwFAUeBmP9JFLXL26/xVhRzNrchTBdq18LnH4AI+/JN9VnKkCx5Aq
-        cHSoAsduKsQhnQoSqQnv78TiOeLyXPGPKS6zpvXU2N7/itVxvqcSgEl1NHpd
-        ST+/qbTMCvpVS/arttJ+PbK0VfRrM9mvzZX265GlraJfW8l+ba20X48sLRFh
-        jVU1WGBSVK/5ZNRO6XCVOMw+OC7qdB/Fn8Ag8xZooScWynj+VCd0YK7lYThy
-        kL39H3dHyZIEXAIA
+        4bZcqZWrW0a18qK286JSAdDMGl5QNtuMOCIhVx5k1bVXa2tzwBv1rLQxqF/D
+        /GMDvqA/JZQszr6wOhNHKwVk8kwUP+q2XVU8hikHFCCfC9d0Mugon092dP0P
+        8vScH7mN+syQkD+pnh8GQu6fuz83wEW+qF+wLzicx5eNdq8b/MufRldMz3bL
+        2JifUAwX/P59WvTjZbAHMacEtR6DfO6N6npYOLw6r9czuvQFbwSHHod4qTGa
+        YErwmfKeHDegghJ9bpNOxo9ydUDmS1wFE1d+PaXF0Wa3xKmJPLSg+PPLV+xb
+        r55TN9iREmOOb4aBVYqoz0HDNtIktMLdqk22Plar1vZw+vvv9u+7v7uhs92u
+        fnjulN0PATqr/wxgsC7Wy64Xjxsi4IegfuU9g2Zgd7r9Qb2KqeGn+l5ps1TB
+        Z0gP7HE9yQoeIrfIcV/b9M9QpBLiVo03xi9RM/jWEfYofmieo2sbJVDKay9A
+        Os3nZTcxW9dCtEaYNvY9jN7srBs/G/G248DXeduo/CHIvog2D1I+UtjA6Cdq
+        yYx7SUroQfyJgotm/755LJ0kA2EWXUWkIxtGtgyro9XxPhcDG4NNE3OlwcjN
+        DEbu75unUJTgG7xk11OrjgJ7fvUPDLaGzinzdip7UvDpH//gSbyks/ZvPWBG
+        6MExQImo+BD5EiWMxpZj9yJXQisYm67nJCYBIOgXDEpyaaEGwHq4oPrkjhp7
+        kcQ7dA8tTVrEdT018rghXAo+fpg4ti6SlSd2mZw7QOwrX503S6ejjtXDplN3
+        0doTNr5+mVxb01kdyUsRAqrAmNmeN3qBR5kpYmfM/wx1Oy9++wXbez4a5CV8
+        qPr5oqE58zR6jL2P0gZTdicZbQ409Fb01CUrdsnseQnPzTKeBmjzc/tTjUZn
+        Qc+1UJxxYCgKvIxH+sglrl7d/4qwo5k1OYpgu1Y+lzh8gMdfku8qzlSBY0gV
+        ODpUgWM3FeKQTgWJ1IT3d2LxHHF5rvjHFJdZ03pqbO9/xeo431MJwKQ6Gr2u
+        pJ/fVFpmBf2qJftVW2m/HlnaKvq1mezX5kr79cjSVtGvrWS/tlbar0eWloiw
+        xqoaLDApqtd8MmqndLhKHGYfHBd1uo/iT2CQeQu00BMLZTx/qhM6MNfyMBw5
+        yN7+D/9M5XUEXAIA
     http_version: 
-  recorded_at: Sat, 14 Feb 2015 22:18:19 GMT
+  recorded_at: Sat, 14 Feb 2015 22:31:40 GMT
 recorded_with: VCR 2.9.3
